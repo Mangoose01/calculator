@@ -1,0 +1,53 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 10%);
+    grid-auto-rows: 100px;
+    grid-template-rows: 200px;
+    grid-gap: 20px;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.resultscreen {
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 4px;
+    font-size: 100px;
+    padding-right: 15px;
+    border-radius: 10px;
+    text-align: right;
+    line-height: 200px;
+    grid-column: span 4;
+    background-color: white;
+}
+
+.grid-item {
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 5px;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+
+.grid-item:hover {
+    background-color: white;
+    color: black;
+}
+
+.equal {
+    background-color: green;
+}
+
+.clear {
+    background-color: red;
+}
+
+.add {
+    grid-row: span 2;
+}
+
+body {
+    background-color: gray;
+}
