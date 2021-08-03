@@ -452,7 +452,7 @@ equal.addEventListener('click', () => {
         historySwitch();
     }
     operant = undefined;
-    sumVal = parseFloat(screenPrint.toFixed(4));
+    sumVal = parseFloat(screenPrint);
 });
 
 //KEYBOARD EQUAL EVENT LISTENER
