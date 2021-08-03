@@ -19,13 +19,31 @@
     line-height: 200px;
     grid-column: span 4;
     background-color: white;
+    margin-bottom: 30px;
+}
+
+.historyscreens {
+    color: rgb(173, 169, 169);
+    grid-template-rows: 100px;
+    height: 200px;
+    grid-column: span 4;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 5px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    text-align: right;
+    padding-right: 15px;
+    line-height: 50px;
 }
 
 .grid-item {
     outline-style: solid;
     outline-color: black;
     outline-width: 5px;
-    font-size: 25px;
+    font-size: 30px;
     border-radius: 20px;
     background-color: black;
     color: white;
