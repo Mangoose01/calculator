@@ -2,15 +2,16 @@ let screenPrint = 0;
 let historyPrint = "";
 let historyPrint2 = "";
 let historyPrint3 = "";
-let firstVar
-let operant
-let sumVal
+let firstVar;
+let operant;
+let sumVal;
+let strLength;
 
 
 const resultScreen = document.querySelector(".resultscreen");
 const historyScreen = document.querySelector(".historyscreen");
-const historyScreen2 = document.querySelector(".historyscreen2")
-const historyScreen3 = document.querySelector(".historyscreen3")
+const historyScreen2 = document.querySelector(".historyscreen2");
+const historyScreen3 = document.querySelector(".historyscreen3");
 const clear = document.querySelector(".clear");
 const plusMinus = document.querySelector(".plus-minus");
 const percentage = document.querySelector(".percentage");
@@ -33,6 +34,8 @@ const one = document.querySelector(".one");
 const zero = document.querySelector(".zero");
 
 resultScreen.textContent = screenPrint
+
+//NUMBERS EVENT LISTENERS
 
 nine.addEventListener('click', () => {
     if (typeof operant == 'undefined' && sumVal > '0') {
@@ -164,6 +167,72 @@ zero.addEventListener('click', () => {
     historyScreen.textContent = historyPrint;
 });
 
+//KEYBOARD BINDING NUMBERS LISTENERS
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '9') {
+        nine.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '8') {
+        eight.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '7') {
+        seven.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '6') {
+        six.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '5') {
+        five.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '4') {
+        four.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '3') {
+        three.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '2') {
+        two.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '1') {
+        one.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '0') {
+        zero.click();
+    }
+});
+     
+   
+
+//OTHER FEATURES EVENT LISTENERS
+
 clear.addEventListener('click', () => {
     screenPrint = 0;
     operant = undefined;
@@ -179,21 +248,54 @@ clear.addEventListener('click', () => {
 plusMinus.addEventListener('click', () => {
     screenPrint = parseFloat(screenPrint) * -1;
     resultScreen.textContent = screenPrint;
+    historyPrint += "(±)";
+    historyScreen.textContent = historyPrint;
 });
 
 period.addEventListener('click', () => {
+    if (!screenPrint.includes(".") ) {
     screenPrint = parseFloat(screenPrint) + ".";
     resultScreen.textContent = screenPrint;
     historyPrint += ".";
     historyScreen.textContent = historyPrint;
+    }
 });
 
 percentage.addEventListener('click', () => {
     screenPrint = parseFloat(screenPrint) / 100;
     resultScreen.textContent = screenPrint;
+    historyPrint += "(%)"
+    historyScreen.textContent = historyPrint;
 }); 
 
+//KEYBOARD OTHER FEATURES EVENT LISTENERS
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' || event.key === 'Backspace') {
+            clear.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '.') {
+            period.click();
+    }
+ });
+
+ document.addEventListener('keydown', (event) => {
+    if (event.key === '%') {
+        percentage.click();
+    }
+ });
+
+
+//OPERANT EVENT LISTENERS
+
 divide.addEventListener('click', () => {
+    strLength = historyPrint.length;
+    if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
+        alert("You can't use 2 operants in a row!")
+    } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
         resultScreen.textContent = parseFloat(screenPrint.toFixed(4));
@@ -212,9 +314,14 @@ divide.addEventListener('click', () => {
     screenPrint = 0;
     historyPrint += " / ";
     historyScreen.textContent = historyPrint;
+    }
 });
 
 multiply.addEventListener('click', () => {
+    strLength = historyPrint.length;
+    if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
+        alert("You can't use 2 operants in a row!")
+    } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
         resultScreen.textContent = parseFloat(screenPrint.toFixed(4));
@@ -233,9 +340,14 @@ multiply.addEventListener('click', () => {
     screenPrint = 0;
     historyPrint += " x ";
     historyScreen.textContent = historyPrint;
+    }
 });
 
 substract.addEventListener('click', () => {
+    strLength = historyPrint.length;
+    if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
+        alert("You can't use 2 operants in a row!")
+    } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
         resultScreen.textContent = parseFloat(screenPrint.toFixed(4));
@@ -253,10 +365,16 @@ substract.addEventListener('click', () => {
     firstVar = parseFloat(screenPrint);
     screenPrint = 0;
     historyPrint += " - ";
+    //doubleOperantCheck();
     historyScreen.textContent = historyPrint;
+    }
 });
 
 add.addEventListener('click', () => {
+    strLength = historyPrint.length;
+    if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
+        alert("You can't use 2 operants in a row!")
+    } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
         resultScreen.textContent = parseFloat(screenPrint.toFixed(4));
@@ -274,8 +392,38 @@ add.addEventListener('click', () => {
     firstVar = parseFloat(screenPrint);
     screenPrint = 0;
     historyPrint += " + ";
+    //doubleOperantCheck();
     historyScreen.textContent = historyPrint;
+    }
 });
+
+//KEYBOARD OPERANT EVENT LISTENERS
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '/') {
+        divide.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '*') {
+        multiply.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '-') {
+        substract.click();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '+') {
+        add.click();
+    }
+});
+
+//EQUAL EVENT LISTENER
 
 equal.addEventListener('click', () => {
     if (operant == "div") {
@@ -304,8 +452,18 @@ equal.addEventListener('click', () => {
         historySwitch();
     }
     operant = undefined;
-    sumVal = parseFloat(screenPrint);
+    sumVal = parseFloat(screenPrint.toFixed(4));
 });
+
+//KEYBOARD EQUAL EVENT LISTENER
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === '=' || event.key === 'Enter') {
+        equal.click();
+    }
+});
+
+//FUNCTIONS
 
 function rmZero() {
     if(screenPrint.indexOf(0)== '0') {
@@ -320,6 +478,8 @@ function rmZero() {
     historyPrint2 = historyPrint;
     historyScreen2.textContent = historyPrint2;
     historyScreen.textContent = "";
-    historyPrint = "SUM";
+    historyPrint = "ANSWER";
  }
+
+
    

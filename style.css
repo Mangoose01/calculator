@@ -32,8 +32,8 @@
     outline-width: 5px;
     font-size: 30px;
     border-radius: 10px;
-    background-color: white;
-    color: black;
+    background-color: rgb(212, 208, 208);
+    color: red;
     text-align: right;
     padding-right: 15px;
     line-height: 50px;
@@ -52,6 +52,15 @@
 .grid-item:hover {
     background-color: white;
     color: black;
+}
+
+.grid-item:active {
+    background-color:rgb(233, 94, 1);
+    padding-left: 10px;
+}
+
+.operant {
+    background-color:rgb(204, 134, 21);
 }
 
 .equal {
