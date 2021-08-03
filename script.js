@@ -46,7 +46,11 @@ nine.addEventListener('click', () => {
     screenPrint = screenPrint + "9";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "9";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "9";
+    } else {
+        historyPrint += "9";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -59,7 +63,11 @@ eight.addEventListener('click', () => {
     screenPrint = screenPrint + "8";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "8";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "8";
+    } else {
+        historyPrint += "8";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -72,7 +80,11 @@ seven.addEventListener('click', () => {
     screenPrint = screenPrint + "7";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "7";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "7";
+    } else {
+        historyPrint += "7";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -85,7 +97,11 @@ six.addEventListener('click', () => {
     screenPrint = screenPrint + "6";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "6";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "6";
+    } else {
+        historyPrint += "6";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -98,7 +114,11 @@ five.addEventListener('click', () => {
     screenPrint = screenPrint + "5";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "5";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "5";
+    } else {
+        historyPrint += "5";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -111,7 +131,11 @@ four.addEventListener('click', () => {
     screenPrint = screenPrint + "4";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "4";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "4";
+    } else {
+        historyPrint += "4";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -124,7 +148,11 @@ three.addEventListener('click', () => {
     screenPrint = screenPrint + "3";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "3";
+    if (historyPrint == "ANSWER") {
+        historyPrint = "3";
+    } else {
+        historyPrint += "3";
+    }
     historyScreen.textContent = historyPrint;
 });
 
@@ -137,7 +165,11 @@ two.addEventListener('click', () => {
     screenPrint = screenPrint + "2";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "2";
+    if (historyPrint == "ANSWER") {
+            historyPrint = "2";
+        } else {
+            historyPrint += "2";
+        }
     historyScreen.textContent = historyPrint;
 });
 
@@ -150,7 +182,11 @@ one.addEventListener('click', () => {
     screenPrint = screenPrint + "1";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "1";
+    if (historyPrint == "ANSWER") {
+            historyPrint = "1";
+        } else {
+            historyPrint += "1";
+        }
     historyScreen.textContent = historyPrint;
 });
 
@@ -163,7 +199,11 @@ zero.addEventListener('click', () => {
     screenPrint = screenPrint + "0";
     rmZero();
     resultScreen.textContent = screenPrint;
-    historyPrint += "0";
+    if (historyPrint == "ANSWER") {
+            historyPrint = "0";
+        } else {
+            historyPrint += "0";
+        }
     historyScreen.textContent = historyPrint;
 });
 
@@ -294,7 +334,7 @@ document.addEventListener('keydown', (event) => {
 divide.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row!")
+        alert("You can't use 2 operants in a row! Stop it now!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -320,7 +360,7 @@ divide.addEventListener('click', () => {
 multiply.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row!")
+        alert("You can't use 2 operants in a row! Stop it now!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -346,7 +386,7 @@ multiply.addEventListener('click', () => {
 substract.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row!")
+        alert("You can't use 2 operants in a row! Stop it now!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -365,7 +405,6 @@ substract.addEventListener('click', () => {
     firstVar = parseFloat(screenPrint);
     screenPrint = 0;
     historyPrint += " - ";
-    //doubleOperantCheck();
     historyScreen.textContent = historyPrint;
     }
 });
@@ -373,7 +412,7 @@ substract.addEventListener('click', () => {
 add.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row!")
+        alert("You can't use 2 operants in a row! Stop it now!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -392,7 +431,6 @@ add.addEventListener('click', () => {
     firstVar = parseFloat(screenPrint);
     screenPrint = 0;
     historyPrint += " + ";
-    //doubleOperantCheck();
     historyScreen.textContent = historyPrint;
     }
 });
@@ -428,25 +466,29 @@ document.addEventListener('keydown', (event) => {
 equal.addEventListener('click', () => {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
-        screenPrint = parseFloat(screenPrint.toFixed(4));
+        screenPrint = screenPrint.toFixed(4);
+        screenPrint = parseFloat(screenPrint);
         resultScreen.textContent = screenPrint;
         historyPrint += " = " + screenPrint.toString();
         historySwitch();
     } else if (operant == "mult") {
         screenPrint = firstVar * parseFloat(screenPrint);
-        screenPrint = parseFloat(screenPrint.toFixed(4));
+        screenPrint = screenPrint.toFixed(4);
+        screenPrint = parseFloat(screenPrint);
         resultScreen.textContent = screenPrint;
         historyPrint += " = " + screenPrint.toString();
         historySwitch();
     } else if (operant == "sub") {
         screenPrint = firstVar - parseFloat(screenPrint);
-        screenPrint = parseFloat(screenPrint.toFixed(4));
+        screenPrint = screenPrint.toFixed(4);
+        screenPrint = parseFloat(screenPrint);
         resultScreen.textContent = screenPrint;
         historyPrint += " = " + screenPrint.toString();
         historySwitch();
     } else if (operant == "add") {
         screenPrint = firstVar + parseFloat(screenPrint);
-        screenPrint = parseFloat(screenPrint.toFixed(4));
+        screenPrint = screenPrint.toFixed(4);
+        screenPrint = parseFloat(screenPrint);
         resultScreen.textContent = screenPrint;
         historyPrint += " = " + screenPrint.toString();
         historySwitch();
