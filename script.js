@@ -213,60 +213,70 @@ zero.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '9') {
         nine.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '8') {
         eight.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '7') {
         seven.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '6') {
         six.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '5') {
         five.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '4') {
         four.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '3') {
         three.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '2') {
         two.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '1') {
         one.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '0') {
         zero.click();
+        blurAll();
     }
 });
      
@@ -323,18 +333,21 @@ percentage.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' || event.key === 'Backspace') {
             clear.click();
+            blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '.') {
             period.click();
+            blurAll();
     }
  });
 
  document.addEventListener('keydown', (event) => {
     if (event.key === '%') {
-        percentage.click();
+            percentage.click();
+            blurAll();
     }
  });
 
@@ -344,7 +357,7 @@ document.addEventListener('keydown', (event) => {
 divide.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row! Stop it now!")
+        alert("You can't use 2 operators in a row! Are you attempting to crash my calculator? It won't work!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -370,7 +383,7 @@ divide.addEventListener('click', () => {
 multiply.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row! Stop it now!")
+        alert("You can't use 2 operators in a row! Are you attempting to crash my calculator? It won't work!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -396,7 +409,7 @@ multiply.addEventListener('click', () => {
 substract.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row! Stop it now!")
+        alert("You can't use 2 operators in a row! Are you attempting to crash my calculator? It won't work!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -422,7 +435,7 @@ substract.addEventListener('click', () => {
 add.addEventListener('click', () => {
     strLength = historyPrint.length;
     if(historyPrint.charAt(strLength-2) == "/" || historyPrint.charAt(strLength-2) == "x" ||historyPrint.charAt(strLength-2) == "+" || historyPrint.charAt(strLength-2) == "-" ) {
-        alert("You can't use 2 operants in a row! Stop it now!")
+        alert("You can't use 2 operators in a row! Are you attempting to crash my calculator? It won't work!")
     } else {
     if (operant == "div") {
         screenPrint = firstVar / parseFloat(screenPrint);
@@ -450,24 +463,28 @@ add.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '/') {
         divide.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '*') {
         multiply.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '-') {
         substract.click();
+        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '+') {
         add.click();
+        blurAll();
     }
 });
 
@@ -510,8 +527,9 @@ equal.addEventListener('click', () => {
 //KEYBOARD EQUAL EVENT LISTENER
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === '=') {
+    if (event.key === '=' || event.key === "Enter") {
         equal.click();
+        blurAll();
     }
 });
 
@@ -523,7 +541,7 @@ function rmZero() {
     }
  }
 
- function historySwitch() {
+function historySwitch() {
     historyScreen.textContent = historyPrint;
     historyPrint3 = historyPrint2;
     historyScreen3.textContent = historyPrint3;
@@ -533,5 +551,24 @@ function rmZero() {
     historyPrint = "ANSWER";
  }
 
-
-   
+function blurAll() {
+    nine.blur();
+    eight.blur();
+    seven.blur();
+    six.blur();
+    five.blur();
+    four.blur();
+    three.blur();
+    two.blur();
+    one.blur();
+    zero.blur();
+    plusMinus.blur();
+    percentage.blur();
+    divide.blur();
+    multiply.blur();
+    substract.blur();
+    add.blur();
+    equal.blur();
+    period.blur();
+    clear.blur();
+ }
