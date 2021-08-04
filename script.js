@@ -53,6 +53,7 @@ nine.addEventListener('click', () => {
         historyPrint += "9";
     }
     historyScreen.textContent = historyPrint;
+    nine.blur();
 });
 
 eight.addEventListener('click', () => {
@@ -70,6 +71,7 @@ eight.addEventListener('click', () => {
         historyPrint += "8";
     }
     historyScreen.textContent = historyPrint;
+    eight.blur();
 });
 
 seven.addEventListener('click', () => {
@@ -87,6 +89,7 @@ seven.addEventListener('click', () => {
         historyPrint += "7";
     }
     historyScreen.textContent = historyPrint;
+    seven.blur();
 });
 
 six.addEventListener('click', () => {
@@ -104,6 +107,7 @@ six.addEventListener('click', () => {
         historyPrint += "6";
     }
     historyScreen.textContent = historyPrint;
+    six.blur();
 });
 
 five.addEventListener('click', () => {
@@ -121,6 +125,7 @@ five.addEventListener('click', () => {
         historyPrint += "5";
     }
     historyScreen.textContent = historyPrint;
+    five.blur();
 });
 
 four.addEventListener('click', () => {
@@ -138,6 +143,7 @@ four.addEventListener('click', () => {
         historyPrint += "4";
     }
     historyScreen.textContent = historyPrint;
+    four.blur();
 });
 
 three.addEventListener('click', () => {
@@ -155,6 +161,7 @@ three.addEventListener('click', () => {
         historyPrint += "3";
     }
     historyScreen.textContent = historyPrint;
+    three.blur();
 });
 
 two.addEventListener('click', () => {
@@ -172,6 +179,7 @@ two.addEventListener('click', () => {
             historyPrint += "2";
         }
     historyScreen.textContent = historyPrint;
+    two.blur();
 });
 
 one.addEventListener('click', () => {
@@ -189,6 +197,7 @@ one.addEventListener('click', () => {
             historyPrint += "1";
         }
     historyScreen.textContent = historyPrint;
+    one.blur();
 });
 
 zero.addEventListener('click', () => {
@@ -206,6 +215,7 @@ zero.addEventListener('click', () => {
             historyPrint += "0";
         }
     historyScreen.textContent = historyPrint;
+    zero.blur();
 });
 
 //KEYBOARD BINDING NUMBERS LISTENERS
@@ -213,49 +223,42 @@ zero.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '9') {
         nine.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '8') {
         eight.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '7') {
         seven.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '6') {
         six.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '5') {
         five.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '4') {
         four.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '3') {
         three.click();
-        blurAll();
     }
 });
 
@@ -269,14 +272,12 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '1') {
         one.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '0') {
         zero.click();
-        blurAll();
     }
 });
      
@@ -295,6 +296,7 @@ clear.addEventListener('click', () => {
     historyScreen2.textContent = historyPrint;
     historyPrint3 = "";
     historyScreen3.textContent = historyPrint;
+    clear.blur();
 });
 
 plusMinus.addEventListener('click', () => {
@@ -302,6 +304,7 @@ plusMinus.addEventListener('click', () => {
     resultScreen.textContent = screenPrint;
     historyPrint += "(±)";
     historyScreen.textContent = historyPrint;
+    plusMinus.blur();
 });
 
 //This is all fucked up - I need to figure it out. Function rmZero may be conflicting...
@@ -318,6 +321,7 @@ period.addEventListener('click', () => {
         resultScreen.textContent = screenPrint;
         historyScreen.textContent = historyPrint;
     }
+    period.blur();
 });
 
 percentage.addEventListener('click', () => {
@@ -326,6 +330,7 @@ percentage.addEventListener('click', () => {
     resultScreen.textContent = screenPrint;
     historyPrint += "(%)"
     historyScreen.textContent = historyPrint;
+    percentage.blur();
 }); 
 
 //KEYBOARD OTHER FEATURES EVENT LISTENERS
@@ -333,21 +338,18 @@ percentage.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' || event.key === 'Backspace') {
             clear.click();
-            blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '.') {
             period.click();
-            blurAll();
     }
  });
 
  document.addEventListener('keydown', (event) => {
     if (event.key === '%') {
             percentage.click();
-            blurAll();
     }
  });
 
@@ -378,6 +380,7 @@ divide.addEventListener('click', () => {
     historyPrint += " / ";
     historyScreen.textContent = historyPrint;
     }
+    divide.blur();
 });
 
 multiply.addEventListener('click', () => {
@@ -404,6 +407,7 @@ multiply.addEventListener('click', () => {
     historyPrint += " x ";
     historyScreen.textContent = historyPrint;
     }
+    multiply.blur();
 });
 
 substract.addEventListener('click', () => {
@@ -430,6 +434,7 @@ substract.addEventListener('click', () => {
     historyPrint += " - ";
     historyScreen.textContent = historyPrint;
     }
+    substract.blur();
 });
 
 add.addEventListener('click', () => {
@@ -456,6 +461,7 @@ add.addEventListener('click', () => {
     historyPrint += " + ";
     historyScreen.textContent = historyPrint;
     }
+    add.blur();
 });
 
 //KEYBOARD OPERANT EVENT LISTENERS
@@ -463,28 +469,24 @@ add.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '/') {
         divide.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '*') {
         multiply.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '-') {
         substract.click();
-        blurAll();
     }
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '+') {
         add.click();
-        blurAll();
     }
 });
 
@@ -522,6 +524,7 @@ equal.addEventListener('click', () => {
     }
     operant = undefined;
     sumVal = parseFloat(screenPrint);
+    equal.blur();
 });
 
 //KEYBOARD EQUAL EVENT LISTENER
@@ -529,7 +532,6 @@ equal.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.key === '=' || event.key === "Enter") {
         equal.click();
-        blurAll();
     }
 });
 
@@ -551,7 +553,7 @@ function historySwitch() {
     historyPrint = "ANSWER";
  }
 
-function blurAll() {
+/*function blurAll() {
     nine.blur();
     eight.blur();
     seven.blur();
@@ -571,4 +573,4 @@ function blurAll() {
     equal.blur();
     period.blur();
     clear.blur();
- }
+ }*/
