@@ -14,16 +14,18 @@
     outline-width: 0px;
     font-size: 50px;
     padding-right: 15px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: right;
-    line-height: 75px;
+    line-height: 70px;
     grid-column: span 4;
     background-color: white;
     margin-bottom: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.849);
 }
 
 .historyscreens {
-    color: rgb(173, 169, 169);
     grid-template-rows: 100px;
     height: 100px;
     grid-column: span 4;
@@ -32,7 +34,7 @@
     outline-width: 0px;
     font-size: 15px;
     border-radius: 10px;
-    background-color: rgb(212, 208, 208);
+    background-color: rgba(22, 21, 21, 0.746);
     color: red;
     text-align: right;
     padding-right: 15px;
@@ -43,7 +45,7 @@
     outline-style: solid;
     outline-color: black;
     outline-width: 0px;
-    font-size: 20px;
+    font-size: 22px;
     border-radius: 20px;
     background-color: black;
     color: white;
@@ -76,7 +78,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: rgba(231, 229, 229, 0.753);
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -95,4 +97,9 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 75px;
+}
+
+:root {
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Sans', sans-serif;
 }

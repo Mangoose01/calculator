@@ -6,6 +6,7 @@ let firstVar;
 let operant;
 let sumVal;
 let strLength;
+let strLength2;
 
 
 const resultScreen = document.querySelector(".resultscreen");
@@ -38,7 +39,7 @@ resultScreen.textContent = screenPrint
 //NUMBERS EVENT LISTENERS
 
 nine.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -55,7 +56,7 @@ nine.addEventListener('click', () => {
 });
 
 eight.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -72,7 +73,7 @@ eight.addEventListener('click', () => {
 });
 
 seven.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -89,7 +90,7 @@ seven.addEventListener('click', () => {
 });
 
 six.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -106,7 +107,7 @@ six.addEventListener('click', () => {
 });
 
 five.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -123,7 +124,7 @@ five.addEventListener('click', () => {
 });
 
 four.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -140,7 +141,7 @@ four.addEventListener('click', () => {
 });
 
 three.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -157,7 +158,7 @@ three.addEventListener('click', () => {
 });
 
 two.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -174,7 +175,7 @@ two.addEventListener('click', () => {
 });
 
 one.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -191,7 +192,7 @@ one.addEventListener('click', () => {
 });
 
 zero.addEventListener('click', () => {
-    if (typeof operant == 'undefined' && sumVal > '0') {
+    if (typeof operant == 'undefined' && sumVal != '0') {
         screenPrint = 0;
         sumVal = 0;
         historyPrint = "";
@@ -275,6 +276,7 @@ document.addEventListener('keydown', (event) => {
 
 clear.addEventListener('click', () => {
     screenPrint = 0;
+    sumVal = 0;
     operant = undefined;
     resultScreen.textContent = screenPrint;
     historyPrint = "";
@@ -292,17 +294,25 @@ plusMinus.addEventListener('click', () => {
     historyScreen.textContent = historyPrint;
 });
 
+//This is all fucked up - I need to figure it out. Function rmZero may be conflicting...
 period.addEventListener('click', () => {
+    strLength2 = screenPrint.length;
     if (!screenPrint.includes(".") ) {
-    screenPrint = parseFloat(screenPrint) + ".";
-    resultScreen.textContent = screenPrint;
-    historyPrint += ".";
-    historyScreen.textContent = historyPrint;
+        if (screenPrint.charAt(0) == 0) {
+            screenPrint = parseFloat(screenPrint) + "."
+            historyPrint += ".";
+        } else {
+            screenPrint = parseFloat(screenPrint) + ".";
+            historyPrint += ".";
+        }
+        resultScreen.textContent = screenPrint;
+        historyScreen.textContent = historyPrint;
     }
 });
 
 percentage.addEventListener('click', () => {
     screenPrint = parseFloat(screenPrint) / 100;
+    screenPrint = screenPrint.toFixed(4);
     resultScreen.textContent = screenPrint;
     historyPrint += "(%)"
     historyScreen.textContent = historyPrint;
@@ -500,7 +510,7 @@ equal.addEventListener('click', () => {
 //KEYBOARD EQUAL EVENT LISTENER
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === '=' || event.key === 'Enter') {
+    if (event.key === '=') {
         equal.click();
     }
 });
